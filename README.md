@@ -1,5 +1,6 @@
 # project3
-#Classifying Wines - Fine or Not?
+
+## Classifying Wines - Fine or Not?
 
 **Created by Will Stith**  
 **08/09/2020**
