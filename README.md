@@ -1,7 +1,7 @@
 # project3
 #Classifying Wines - Fine or Not?
 
-**Created by Will Stith**
+**Created by Will Stith**  
 **08/09/2020**
 
 **Introduction**
@@ -33,13 +33,13 @@ The data was downloaded from the UCI Machine Learning Repository at https://arch
 
 **Contents**
 
-*project3_data_intake.ipynb* - contains code which uses SQLAlchemy to read data from the psql database into a Pandas DataFrame.\n
-*project3_modeling.ipynb* - contains code for building the classification model, as well as some additional data cleaning.\n
-*wine_streamlit.py* - contains code for the Streamlit app associated with the model.\n
-*project3_psql_work.txt* - contains code for creating psql tables from the project data as well as the psql queries used to clean and modify tables.\n
-*sl_wine_df.p* - pickled save of the data used in running the Streamlit app.\n
-*sl_wine_model.p* - pickled save of the random forest model used in running the Streamlit app.\n
-*wine_df_from_sql.p* - pickled save of the wine DataFrame after exporting from psql.\n
+*project3_data_intake.ipynb* - contains code which uses SQLAlchemy to read data from the psql database into a Pandas DataFrame.  
+*project3_modeling.ipynb* - contains code for building the classification model, as well as some additional data cleaning.  
+*wine_streamlit.py* - contains code for the Streamlit app associated with the model.  
+*project3_psql_work.txt* - contains code for creating psql tables from the project data as well as the psql queries used to clean and modify tables.  
+*sl_wine_df.p* - pickled save of the data used in running the Streamlit app.  
+*sl_wine_model.p* - pickled save of the random forest model used in running the Streamlit app.  
+*wine_df_from_sql.p* - pickled save of the wine DataFrame after exporting from psql.  
 *wine_bottles.png* - png image for Streamlit page.
 
 **Instructions**
