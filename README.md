@@ -49,7 +49,7 @@ Download data from the UCI Machine Learning Repository at https://archive.ics.uc
 
 **Acknowledgements**
 
-Thank you to all my Metis instructors and TAs for their support and guidance for this project and others. Additionally, I'd like to thank my fellow Metis students for positively contributing to the learning environment. Special thanks to Paolo Cortez and colleagues at the University of Minho in Guimaraes, Portugal for making the data used in this project publicly available, as well as to the University of California, Irvine for maintaining their Machine Learning Repository which hosted the data.
+Thank you to all my Metis instructors and TAs for their support and guidance for this project and others. Additionally, I'd like to thank my fellow Metis students for positively contributing to the learning environment. Special thanks to Paolo Cortez and colleagues at the University of Minho in Guimaraes, Portugal for making the data used in this project publicly available, as well as to the University of California, Irvine for maintaining their Machine Learning Repository which hosted the data.  
     Paulo Cortez, University of Minho, Guimarães, Portugal, http://www3.dsi.uminho.pt/pcortez
     A. Cerdeira, F. Almeida, T. Matos and J. Reis, Viticulture Commission of the Vinho Verde Region(CVRVV), Porto, Portugal
     @2009
