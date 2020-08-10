@@ -1,0 +1,74 @@
+--create red/white wine tables from each csv
+
+CREATE TABLE IF NOT EXISTS redwines (
+	    fixed_acidity float8 NOT NULL,
+	    volatile_acidity float8 NOT NULL,
+	    citric_acid float8 NOT NULL,
+	    residual_sugar float8 DEFAULT NULL,
+	    chlorides float8 DEFAULT NULL,
+	    free_so2 float8 DEFAULT NULL,
+	    total_so2 float8 DEFAULT NULL,
+	    density float8 DEFAULT NULL,
+      pH float8 DEFAULT NULL,
+      sulphates float8 DEFAULT NULL,
+      alcohol float8 DEFAULT NULL,
+      quality integer DEFAULT NULL
+    );
+
+COPY redwines FROM '/home/ubuntu/winequality-red.csv' DELIMITER ';' CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS whitewines (
+    	fixed_acidity float8 NOT NULL,
+    	volatile_acidity float8 NOT NULL,
+    	citric_acid float8 NOT NULL,
+    	residual_sugar float8 DEFAULT NULL,
+    	chlorides float8 DEFAULT NULL,
+      free_so2 float8 DEFAULT NULL,
+      total_so2 float8 DEFAULT NULL,
+      density float8 DEFAULT NULL,
+      pH float8 DEFAULT NULL,
+      sulphates float8 DEFAULT NULL,
+      alcohol float8 DEFAULT NULL,
+      quality integer DEFAULT NULL
+    );
+
+COPY whitewines FROM '/home/ubuntu/winequality-white.csv' DELIMITER ';' CSV HEADER;
+
+--create red/white column for each table
+alter table redwines
+add variety real default 0
+
+alter table whitewines
+add variety real default 1
+
+--create goodbad binary column for each table
+alter table redwines
+add goodbad boolean default false
+
+alter table whitewines
+add goodbad boolean default false
+
+--set goodbad values based on quality scores
+update redwines
+set goodbad = (quality >= 7)
+
+update whitewines
+set goodbad = (quality >= 7)
+
+--create unfree so2 column for each table
+alter table redwines
+add unfree_so2 float8 default 0
+
+update redwines
+set unfree_so2 = (total_so2 - free_so2)
+
+alter table whitewines
+add unfree_so2 float8 default 0
+
+update whitewines
+set unfree_so2 = (total_so2 - free_so2)
+
+--merge red and white tables into 1
+insert into redwines select * from whitewines
+
+--now redwines is my full table (with duplicates) to query with SQLAlchemy
